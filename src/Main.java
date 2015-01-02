@@ -8,11 +8,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-
+        //check the args
         if (args.length != 3) {
             System.out.println("mode[\"decode\"|\"encode\"] key input");
             System.exit(1);
         }
+
 
         String input = args[2].toLowerCase();
         String key = args[1].toLowerCase();
@@ -20,6 +21,7 @@ public class Main {
 
         String output = "";
 
+        //create alphabet table
         char matrix[][] = new char[25][25];
 
         for (int x = 0; x < 25; x++) {
@@ -47,6 +49,7 @@ public class Main {
         System.out.println("INPUT: " + input);
         System.out.println();
         System.out.print("OUTPUT: " + output);
+        System.exit(0);
     }
 
 

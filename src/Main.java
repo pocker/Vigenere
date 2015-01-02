@@ -14,8 +14,8 @@ public class Main {
             System.exit(1);
         }
 
-        String input = args[2];
-        String key = args[1];
+        String input = args[2].toLowerCase();
+        String key = args[1].toLowerCase();
         String mode = args[0];
 
         String output = "";
@@ -31,14 +31,13 @@ public class Main {
         if ("decode".equals(mode)) {
             for (int i = 0; i < input.length(); i++) {
                 for (int x = 0; x < 25; x++) {
-                    char tmp = matrix[x][key.charAt(i % key.length()) - 97];
-                    if (tmp == input.charAt(i)) {
-                        output += matrix[x][0];
+                    if (matrix[x][key.charAt(i % key.length()) - 97] == input.charAt(i)) {
+                        output += (char) (x + 97);
                         break;
                     }
                 }
             }
-        } else {
+        } else if ("encode".equals(mode)) {
             for (int i = 0; i < input.length(); i++) {
                 output += matrix[input.charAt(i) - 97][key.charAt(i % key.length()) - 97];
             }

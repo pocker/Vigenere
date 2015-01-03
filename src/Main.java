@@ -4,8 +4,6 @@
  */
 public class Main {
 
-    private static int ABC_OFFSET = 0;
-
     public static void main(String[] args) {
 
         //check the args
@@ -26,7 +24,7 @@ public class Main {
 
         for (int x = 0; x < 25; x++) {
             for (int y = 0; y < 25; y++) {
-                matrix[x][y] = (char) (((ABC_OFFSET + x + y) % 25) + 97);
+                matrix[x][y] = (char) (((x + y) % 25) + 97);
             }
         }
 
